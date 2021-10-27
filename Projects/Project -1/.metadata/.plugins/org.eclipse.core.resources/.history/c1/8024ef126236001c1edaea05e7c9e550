@@ -1,0 +1,54 @@
+package com.revature.app;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Main {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		//To use Selenium WebDriver, it needs to point to a location of the webdriver file
+		System.setProperty("webdriver.chrome.driver", "C:/webdrivers/chromdriver.exe");
+
+		// Now instantiate a WebDriver object
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("http://localhost:8080"); // navigates to the website
+		
+		//locate the 2 input elements and button for adding numbers
+		WebElement addInput1 = driver.findElement(By.id("addNum1"));
+		WebElement addInput2 = driver.findElement(By.id("addNum2"));
+		WebElement addButton = driver.findElement(By.id("addBtn"));
+	
+		addInput1.sendKeys("135.20"); // puts that number in the first element
+		addInput2.sendKeys("1.80"); // puts that number in the second element
+		addButton.click();	// clicks the add button
+		
+		driver.switchTo().frame("addResult"); // Switch into the inside of the add iframe 
+		WebElement addOutput = driver.findElement(By.tagName("pre")); // find the 'pre' tag that is embedded inside of iframes
+		System.out.println("The result of adding 135.20 + 1.80 is: " + addOutput.getText()); // print out the text of the output element
+		
+		driver.switchTo().parentFrame(); // switch back outside of the iframe
+		
+		//Subtraction
+		//locate the 2 input elements and button for subtracting numbers
+				WebElement subInput1 = driver.findElement(By.id("addNum1"));
+				WebElement subInput2 = driver.findElement(By.id("addNum2"));
+				WebElement subButton = driver.findElement(By.id("addBtn"));
+			
+				subInput1.sendKeys("135.20"); // puts that number in the first element
+				subInput2.sendKeys("1.80"); // puts that number in the second element
+				subButton.click();	// clicks the subtract button
+				
+				driver.switchTo().frame("subResult"); // Switch into the inside of the add iframe 
+				WebElement subOutput = driver.findElement(By.tagName("pre")); // find the 'pre' tag that is embedded inside of iframes
+				System.out.println("The result of adding 135.20 + 1.80 is: " + addOutput.getText()); // print out the text of the output element
+				
+				driver.switchTo().parentFrame(); // switch back outside of the iframe
+	}
+
+}

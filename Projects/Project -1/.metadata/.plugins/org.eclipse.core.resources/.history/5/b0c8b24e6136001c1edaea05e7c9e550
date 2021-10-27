@@ -1,0 +1,34 @@
+package com.revature.app;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Main {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		//To use Selenium WebDriver, it needs to point to a location of the webdriver file
+		System.setProperty("webdriver.chrome.driver", "C:/webdrivers/chromdriver.exe");
+
+		// Now instantiate a WebDriver object
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("http://localhost:8080"); // navigates to the website
+		
+		//locate the 2 input ellements and button for adding numbers
+		WebElement addInput1 = driver.findElement(By.id("addNum1"));
+		WebElement addInput2 = driver.findElement(By.id("addNum2"));
+		WebElement addButton = driver.findElement(By.id("addBtn"));
+	
+		addInput1.sendKeys("135.20"); // puts that number in the first element
+		addInput2.sendKeys("1.80"); // puts that number in the second element
+		addButton.click();	// clicks the add button
+		
+		driver.switchTo().frame("addResult"); 
+	}
+
+}

@@ -1,0 +1,19 @@
+package com.revature.app;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Main {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		//To use Selenium WebDriver, it needs to point to a location of the webdriver file
+		System.setProperty("webdriver.chrome.driver", "C:/webdrivers/chromdriver.exe");
+
+	}
+
+}
