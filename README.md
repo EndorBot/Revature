@@ -1,5 +1,5 @@
 # Revature
-Contains all while training at Revature
+Contains all projects while training at Revature
 
 
 This repositry contains all my projects I've worked on during my training at Revature.
