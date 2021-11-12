@@ -13,12 +13,12 @@ public class Main {
 
 		// To use Selenium WebDriver, it needs to point to a location of the webdriver
 		// file
-		System.setProperty("webdriver.chrome.driver", "C://webdrivers/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\webdrivers\\chromedriver.exe");
 
 		// Now instantiate a WebDriver object
 		WebDriver driver = new ChromeDriver();
 
-		driver.get("http://localhost:8080"); // navigates to the website
+		driver.get("http://localhost:8080/index.html"); // navigates to the website
 
 		// locate the 2 input elements and button for adding numbers
 		WebElement addInput1 = driver.findElement(By.id("addNum1"));
@@ -91,7 +91,7 @@ public class Main {
 
 		driver.switchTo().parentFrame(); // switch back outside of the iframe
 
-		Thread.sleep(15000); // Pausing for 30 seconds
+		Thread.sleep(15000); // Pausing for 15 seconds
 		// quit method
 		// When done with the scripted tasks provided by the Selenium WebDriver, we
 		// should quit the driver

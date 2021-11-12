@@ -1,6 +1,6 @@
 package com.revature.controller;
 
-import com.reavature.service.ArthimaticService;
+import com.revature.service.ArthimaticService;
 
 import io.javalin.Javalin;
 import io.javalin.http.Handler;
