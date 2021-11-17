@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,36 @@ import com.revature.util.JDBCUtility;
 public class ClientDAO {
 // Part of the data access layer
 
+	public Client addClient(AddOrUpdateClientDTO client) throws SQLException {
+		try(Connection con = JDBCUtility.getConnection()){
+			String sql = "INSERT INTO clients (client_first_name, client_last_name, client_phone_number, client_age)" 
+							+ " VALUES (?, ?, ?, ?)";
+			
+			PreparedStatement pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			
+			pstmt.setString(1, client.getFirstName());
+			pstmt.setString(2, client.getLastName());
+			pstmt.setString(3, client.getPhoneNumber());
+			pstmt.setInt(4, client.getAge());
+			
+			int numberOfRecordsInserted = pstmt.executeUpdate();
+			
+			// adding client was unsucceful
+			if (numberOfRecordsInserted != 1) {
+				throw new SQLException("Adding a new Client was unsucceful");
+			}
+			
+			ResultSet rs = pstmt.getGeneratedKeys();
+			
+			rs.next();
+			int automaticallyGeneratedId = rs.getInt(1); // grabs value from first row
+			
+			// return the Client made in the databse, and automatically add a id, which needs to be retrieved
+			return new Client(automaticallyGeneratedId, client.getFirstName(), client.getLastName(), 
+					client.getPhoneNumber(), client.getAge());
+		}
+	}
+	
 	public List<Client> getAllClients() throws SQLException {
 		List<Client> listOfClients = new ArrayList<>();
 
@@ -70,8 +101,8 @@ public class ClientDAO {
 	public Client updateClient (int clientId, AddOrUpdateClientDTO client) throws SQLException {
 		
 		try (Connection con = JDBCUtility.getConnection()){
-			String sql = "UPDATE clients " + "SET client_first_name = ?" + "client_last_name = ?" 
-						+ "client_phone_number = ?" + "client_age = ?;" + "WHERE " + "client_id = ?";
+			String sql = "UPDATE clients" + " SET client_first_name = ?," + " client_last_name = ?," 
+						+ " client_phone_number = ?," + " client_age = ? " + "WHERE " + "client_id = ?;";
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			
 			pstmt.setString(1, client.getFirstName());
@@ -124,4 +155,6 @@ public class ClientDAO {
 			
 		}
 	}
+
+
 }

@@ -22,12 +22,11 @@ public class ClientController {
 		// get id from URI
 		String clientId = ctx.pathParam("id");
 		
-		int id = Integer.parseInt(clientId);
 		
 		// extract info
 		AddOrUpdateClientDTO dto = ctx.bodyAsClass(AddOrUpdateClientDTO.class);
 		
-		Client clientThatWasJustEdited = this.clientService.editFirstNameOfClient(clientId,dto.getFirstName());
+		Client clientThatWasJustEdited = this.clientService.editFirstNameOfClient(clientId, dto.getFirstName());
 		
 		// place info into json
 		ctx.json(clientThatWasJustEdited); 
@@ -49,16 +48,16 @@ public class ClientController {
 		ctx.json(clients);
 	};
 	
-	private Handler getClientsById = (ctx) -> {
+	private Handler getClientById = (ctx) -> {
 		String clientId = ctx.pathParam("id");
 		Client c = this.clientService.getClientById(clientId);
 		
-		ctx.json(clientId);
+		ctx.json(c);
 	};
 	
 	private Handler editClientById = (ctx) -> {
 		String clientId = ctx.pathParam("id");	
-		int id = Integer.parseInt(clientId);
+		//int id = Integer.parseInt(clientId);
 		
 		AddOrUpdateClientDTO dto = ctx.bodyAsClass(AddOrUpdateClientDTO.class);
 		
@@ -79,10 +78,10 @@ public class ClientController {
 //	};
 	
 	public void registerEndpoint(Javalin app) {
-		app.patch("/clients/{id}/firstName", editClientFirstName);
+		app.patch("/clients/{id}/firstname", editClientFirstName);
 		app.post("/clients", addClient);
 		app.get("/clients", getAllClients);
-		app.get("/clients/{id}", getClientsById);
+		app.get("/clients/{id}", getClientById);
 		app.put("/clients/{id}", editClientById);
 		app.delete("/clients/{id}",deleteClientById);
 		//app.delete("/clients", deleteAllClients);

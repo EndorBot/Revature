@@ -54,12 +54,6 @@ public class AddOrUpdateClientDTO {
 	}
 
 	@Override
-	public String toString() {
-		return "AddOrUpdateClientDTO [firstName=" + firstName + ", lastName=" + lastName + ", phoneNumber="
-				+ phoneNumber + ", age=" + age + "]";
-	}
-
-	@Override
 	public int hashCode() {
 		return Objects.hash(age, firstName, lastName, phoneNumber);
 	}
@@ -76,5 +70,11 @@ public class AddOrUpdateClientDTO {
 		return age == other.age && Objects.equals(firstName, other.firstName)
 				&& Objects.equals(lastName, other.lastName) && Objects.equals(phoneNumber, other.phoneNumber);
 	}
-	
+
+	@Override
+	public String toString() {
+		return "AddOrUpdateClientDTO [firstName=" + firstName + ", lastName=" + lastName + ", phoneNumber="
+				+ phoneNumber + ", age=" + age + "]";
+	}
+
 }

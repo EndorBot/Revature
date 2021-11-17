@@ -11,15 +11,16 @@ public class JDBCUtility {
 		// Using utility class to create a connection string
 		
 		//Credentials to connect to database
-		String url= "jdbc:postgresqql://localhost:5432/postgres";
+		String url = "jdbc:postgresql://localhost:5432/postgres";
 		String username = "postgres";
 		String password = "password";
+		// jdbc:postgresql://localhost:5432/postgres
 		
 		Driver postgresDriver = new Driver();
 		
 		DriverManager.registerDriver(postgresDriver);
 		
-		Connection con = DriverManager.getConnection(url,username,password);
+		Connection con = DriverManager.getConnection(url, username, password);
 		
 		return con;
 	}

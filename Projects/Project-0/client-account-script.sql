@@ -24,8 +24,7 @@ DROP TABLE IF EXISTS accounts
 CREATE TABLE accounts (
 	account_id SERIAL PRIMARY KEY,  
 	account_number INTEGER NOT NULL,-- I believe it can be anywhere between 8 to 12 digits
-	account_routing INTEGER NOT NULL,-- Will always be nine digits long
-	account_amount VARCHAR(255) NOT NULL, -- can use ISNUMERIC(account_amount) to check if the 
+	account_amount INTEGER NOT NULL, -- can use ISNUMERIC(account_amount) to check if the 
 	account_type VARCHAR(20) NOT NULL,
 	client_id INTEGER NOT NULL, -- links to clients
 	
@@ -38,10 +37,12 @@ FROM accounts
 -- Remember that things in account need to be deleted first before things in client, due to referential integrity
 -- and SQL not allowing orphan records
 
-INSERT INTO accounts (account_number, account_routing, account_amount, account_type, client_id)
+INSERT INTO accounts (account_number, account_amount, account_type, client_id)
 VALUES
-(379216084, 276501785,'4000.50','Checking',1),
-(375829657, 275639249,'300.65','Savings', 2);
+(379216084, 4000,'Checking',1),
+(375829657, 300,'Savings', 2),
+(174501654, 250,'Checking',2),
+(771067105, 305,'Savings', 1);
 
 SELECT account_amount
 FROM accounts;
