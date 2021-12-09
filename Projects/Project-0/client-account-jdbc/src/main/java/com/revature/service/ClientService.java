@@ -159,9 +159,13 @@ public class ClientService {
 		try {
 			int id = Integer.parseInt(clientId);
 			Client clientToEdit = this.clientDao.getClientById(id);
-
+			
 			if (clientToEdit == null) {
 				throw new ClientNotFoundException("Client with an id of " + clientId + " was not found");
+			}
+			
+			if (changedFirstName.trim().equals("") || changedLastName.trim().equals("")) {
+				throw new InvalidParameterException("First name and/or last name cannot be blank");
 			}
 
 			if (changedPhoneNumber.length() != 12) {
@@ -183,6 +187,8 @@ public class ClientService {
 			throw new InvalidParameterException("Id provided is not an int convertable value");
 		} catch (PhoneNumberInvalidExcpetion e) {
 			throw new PhoneNumberInvalidExcpetion("Phone number must be 12 characters long");
+		} catch (InvalidParameterException e) {
+			throw new InvalidParameterException("The names cannot be blank");
 		}
 
 	}

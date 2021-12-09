@@ -4521,3 +4521,618 @@ org.postgresql.util.PSQLException: FATAL: password authentication failed for use
 17 Nov 2021 - 10:30:23.780 [qtp33105141-16] INFO  com.revature.service.AccountService - getAllAccountsByClientId() invoked
 17 Nov 2021 - 10:30:23.841 [qtp33105141-16] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
 17 Nov 2021 - 10:30:23.842 [qtp33105141-16] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 13:05:49.664 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+17 Nov 2021 - 13:05:49.675 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @362ms to org.eclipse.jetty.util.log.Slf4jLog
+17 Nov 2021 - 13:05:49.676 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+17 Nov 2021 - 13:05:49.692 [main] INFO  io.javalin.Javalin - You are running Javalin 4.1.1 (released October 10, 2021).
+17 Nov 2021 - 13:05:49.692 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+17 Nov 2021 - 13:05:50.022 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+17 Nov 2021 - 13:05:50.022 [main] INFO  io.javalin.Javalin - Javalin started in 346ms \o/
+17 Nov 2021 - 13:05:55.228 [qtp33105141-23] INFO  com.revature.app.Application - GET request received to the /clients/2/accounts endpoint
+17 Nov 2021 - 13:05:55.229 [qtp33105141-23] INFO  com.revature.service.AccountService - getAllAccountsByClientId() invoked
+17 Nov 2021 - 13:05:55.625 [qtp33105141-23] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 13:05:55.626 [qtp33105141-23] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 13:06:01.962 [qtp33105141-11] INFO  com.revature.app.Application - POST request received to the /clients/1/accounts endpoint
+17 Nov 2021 - 13:06:01.990 [qtp33105141-11] INFO  com.revature.service.AccountService - addAccountByClientId() invoked
+17 Nov 2021 - 13:06:02.052 [qtp33105141-11] WARN  io.javalin.Javalin - Uncaught exception
+org.postgresql.util.PSQLException: ERROR: INSERT has more target columns than expressions
+  Position: 69
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2674)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2364)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:354)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:484)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:404)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:162)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:130)
+	at com.revature.dao.AccountDAO.addAccountToClientId(AccountDAO.java:129)
+	at com.revature.service.AccountService.addAccountByClientId(AccountService.java:102)
+	at com.revature.controller.AccountController.lambda$2(AccountController.java:39)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:113)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:129)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.produce(EatWhatYouKill.java:137)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:748)
+17 Nov 2021 - 13:07:47.331 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+17 Nov 2021 - 13:07:47.341 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @348ms to org.eclipse.jetty.util.log.Slf4jLog
+17 Nov 2021 - 13:07:47.342 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+17 Nov 2021 - 13:07:47.357 [main] INFO  io.javalin.Javalin - You are running Javalin 4.1.1 (released October 10, 2021).
+17 Nov 2021 - 13:07:47.357 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+17 Nov 2021 - 13:07:47.684 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+17 Nov 2021 - 13:07:47.685 [main] INFO  io.javalin.Javalin - Javalin started in 343ms \o/
+17 Nov 2021 - 13:07:54.249 [qtp33105141-20] INFO  com.revature.app.Application - POST request received to the /clients/1/accounts endpoint
+17 Nov 2021 - 13:07:54.416 [qtp33105141-20] INFO  com.revature.service.AccountService - addAccountByClientId() invoked
+17 Nov 2021 - 14:16:41.060 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:16:41.073 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:16:41.075 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:16:41.076 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:16:41.077 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:16:41.079 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:16:41.080 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:16:41.081 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:16:41.082 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:16:41.085 [main] INFO  com.revature.service.ClientService - getAllClients() invoked
+17 Nov 2021 - 14:16:41.087 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:16:41.088 [main] INFO  com.revature.service.ClientService - getClientById() invoked
+17 Nov 2021 - 14:16:41.089 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:16:41.090 [main] INFO  com.revature.service.ClientService - editFirstNameOfClient() invoked
+17 Nov 2021 - 14:16:41.091 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:16:41.093 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:16:41.094 [main] INFO  com.revature.service.ClientService - getClientById() invoked
+17 Nov 2021 - 14:16:41.095 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:16:41.096 [main] INFO  com.revature.service.ClientService - editFirstNameOfClient() invoked
+17 Nov 2021 - 14:16:41.098 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:16:41.099 [main] INFO  com.revature.service.ClientService - getAllClients() invoked
+17 Nov 2021 - 14:16:41.100 [main] INFO  com.revature.service.ClientService - getClientById() invoked
+17 Nov 2021 - 14:16:41.101 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:16:41.102 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:16:41.103 [main] INFO  com.revature.service.ClientService - getClientById() invoked
+17 Nov 2021 - 14:16:41.104 [main] INFO  com.revature.service.ClientService - editFirstNameOfClient() invoked
+17 Nov 2021 - 14:16:41.105 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:16:41.106 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:16:41.108 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:40:52.024 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:40:52.038 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:40:52.039 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:40:52.041 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:40:52.042 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:40:52.044 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:40:52.045 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:40:52.046 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:40:52.047 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:40:52.050 [main] INFO  com.revature.service.ClientService - getAllClients() invoked
+17 Nov 2021 - 14:40:52.051 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:40:52.052 [main] INFO  com.revature.service.ClientService - getClientById() invoked
+17 Nov 2021 - 14:40:52.053 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:40:52.055 [main] INFO  com.revature.service.ClientService - editFirstNameOfClient() invoked
+17 Nov 2021 - 14:40:52.056 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:40:52.057 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:40:52.059 [main] INFO  com.revature.service.ClientService - getClientById() invoked
+17 Nov 2021 - 14:40:52.060 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:40:52.061 [main] INFO  com.revature.service.ClientService - editFirstNameOfClient() invoked
+17 Nov 2021 - 14:40:52.062 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:40:52.064 [main] INFO  com.revature.service.ClientService - getAllClients() invoked
+17 Nov 2021 - 14:40:52.065 [main] INFO  com.revature.service.ClientService - getClientById() invoked
+17 Nov 2021 - 14:40:52.066 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:40:52.067 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:40:52.068 [main] INFO  com.revature.service.ClientService - getClientById() invoked
+17 Nov 2021 - 14:40:52.070 [main] INFO  com.revature.service.ClientService - editFirstNameOfClient() invoked
+17 Nov 2021 - 14:40:52.071 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:40:52.072 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:40:52.074 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:41:00.928 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+17 Nov 2021 - 14:41:00.941 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @362ms to org.eclipse.jetty.util.log.Slf4jLog
+17 Nov 2021 - 14:41:00.942 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+17 Nov 2021 - 14:41:00.957 [main] INFO  io.javalin.Javalin - You are running Javalin 4.1.1 (released October 10, 2021).
+17 Nov 2021 - 14:41:00.957 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+17 Nov 2021 - 14:41:01.294 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+17 Nov 2021 - 14:41:01.294 [main] INFO  io.javalin.Javalin - Javalin started in 353ms \o/
+17 Nov 2021 - 14:41:40.717 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:41:40.733 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:41:40.735 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:41:40.737 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:41:40.739 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:41:40.741 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:41:40.743 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:41:40.745 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:41:40.748 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:41:40.751 [main] INFO  com.revature.service.ClientService - getAllClients() invoked
+17 Nov 2021 - 14:41:40.752 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:41:40.754 [main] INFO  com.revature.service.ClientService - getClientById() invoked
+17 Nov 2021 - 14:41:40.755 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:41:40.756 [main] INFO  com.revature.service.ClientService - editFirstNameOfClient() invoked
+17 Nov 2021 - 14:41:40.758 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:41:40.760 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:41:40.761 [main] INFO  com.revature.service.ClientService - getClientById() invoked
+17 Nov 2021 - 14:41:40.762 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:41:40.764 [main] INFO  com.revature.service.ClientService - editFirstNameOfClient() invoked
+17 Nov 2021 - 14:41:40.765 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:41:40.766 [main] INFO  com.revature.service.ClientService - getAllClients() invoked
+17 Nov 2021 - 14:41:40.767 [main] INFO  com.revature.service.ClientService - getClientById() invoked
+17 Nov 2021 - 14:41:40.769 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:41:40.770 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:41:40.771 [main] INFO  com.revature.service.ClientService - getClientById() invoked
+17 Nov 2021 - 14:41:40.772 [main] INFO  com.revature.service.ClientService - editFirstNameOfClient() invoked
+17 Nov 2021 - 14:41:40.773 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:41:40.774 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:41:40.775 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:41:48.314 [qtp33105141-23] INFO  com.revature.app.Application - GET request received to the /clients/2/accounts endpoint
+17 Nov 2021 - 14:41:48.314 [qtp33105141-23] INFO  com.revature.service.AccountService - getAllAccountsByClientId() invoked
+17 Nov 2021 - 14:41:48.725 [qtp33105141-23] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 14:41:48.725 [qtp33105141-23] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 14:43:33.145 [qtp33105141-13] INFO  com.revature.app.Application - PATCH request received to the /clients/1/firstname endpoint
+17 Nov 2021 - 14:43:33.172 [qtp33105141-13] INFO  com.revature.service.ClientService - editFirstNameOfClient() invoked
+17 Nov 2021 - 14:43:44.300 [qtp33105141-23] INFO  com.revature.app.Application - PUT request received to the /clients/1 endpoint
+17 Nov 2021 - 14:43:44.302 [qtp33105141-23] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:43:52.262 [qtp33105141-24] INFO  com.revature.app.Application - PUT request received to the /clients/1 endpoint
+17 Nov 2021 - 14:43:52.263 [qtp33105141-24] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:48:24.104 [qtp33105141-9] INFO  com.revature.app.Application - PUT request received to the /clients/1 endpoint
+17 Nov 2021 - 14:48:24.105 [qtp33105141-9] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:48:32.520 [qtp33105141-11] INFO  com.revature.app.Application - PUT request received to the /clients/1 endpoint
+17 Nov 2021 - 14:48:32.521 [qtp33105141-11] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:48:36.506 [qtp33105141-27] INFO  com.revature.app.Application - PUT request received to the /clients/1 endpoint
+17 Nov 2021 - 14:48:36.507 [qtp33105141-27] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:48:42.712 [qtp33105141-11] INFO  com.revature.app.Application - PUT request received to the /clients/1 endpoint
+17 Nov 2021 - 14:48:42.712 [qtp33105141-11] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:51:16.994 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:51:17.008 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:51:17.009 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:51:17.011 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:51:17.012 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:51:17.015 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:51:17.016 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:51:17.018 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:51:17.019 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:51:17.022 [main] INFO  com.revature.service.ClientService - getAllClients() invoked
+17 Nov 2021 - 14:51:17.023 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:51:17.025 [main] INFO  com.revature.service.ClientService - getClientById() invoked
+17 Nov 2021 - 14:51:17.026 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:51:17.027 [main] INFO  com.revature.service.ClientService - editFirstNameOfClient() invoked
+17 Nov 2021 - 14:51:17.029 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:51:17.030 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:51:17.031 [main] INFO  com.revature.service.ClientService - getClientById() invoked
+17 Nov 2021 - 14:51:17.033 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:51:17.034 [main] INFO  com.revature.service.ClientService - editFirstNameOfClient() invoked
+17 Nov 2021 - 14:51:17.035 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:51:17.036 [main] INFO  com.revature.service.ClientService - getAllClients() invoked
+17 Nov 2021 - 14:51:17.038 [main] INFO  com.revature.service.ClientService - getClientById() invoked
+17 Nov 2021 - 14:51:17.041 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:51:17.042 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:51:17.044 [main] INFO  com.revature.service.ClientService - getClientById() invoked
+17 Nov 2021 - 14:51:17.046 [main] INFO  com.revature.service.ClientService - editFirstNameOfClient() invoked
+17 Nov 2021 - 14:51:17.047 [main] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 14:51:17.048 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:51:17.050 [main] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:51:21.674 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+17 Nov 2021 - 14:51:21.686 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @361ms to org.eclipse.jetty.util.log.Slf4jLog
+17 Nov 2021 - 14:51:21.687 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+17 Nov 2021 - 14:51:21.703 [main] INFO  io.javalin.Javalin - You are running Javalin 4.1.1 (released October 10, 2021).
+17 Nov 2021 - 14:51:21.704 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+17 Nov 2021 - 14:51:22.028 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+17 Nov 2021 - 14:51:22.028 [main] INFO  io.javalin.Javalin - Javalin started in 342ms \o/
+17 Nov 2021 - 14:51:28.775 [qtp33105141-23] INFO  com.revature.app.Application - PUT request received to the /clients/1 endpoint
+17 Nov 2021 - 14:51:28.960 [qtp33105141-23] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:51:29.347 [qtp33105141-23] WARN  io.javalin.Javalin - Uncaught exception
+com.revature.exceptions.InvalidParameterException: First name and/or last name cannot be blank
+	at com.revature.service.ClientService.editClientById(ClientService.java:168)
+	at com.revature.controller.ClientController.lambda$4(ClientController.java:64)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:113)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:129)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:748)
+17 Nov 2021 - 14:52:35.652 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+17 Nov 2021 - 14:52:35.662 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @359ms to org.eclipse.jetty.util.log.Slf4jLog
+17 Nov 2021 - 14:52:35.663 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+17 Nov 2021 - 14:52:35.679 [main] INFO  io.javalin.Javalin - You are running Javalin 4.1.1 (released October 10, 2021).
+17 Nov 2021 - 14:52:35.680 [main] INFO  io.javalin.Javalin - No port specified, starting on port 8080. Call start(port) to change ports.
+17 Nov 2021 - 14:52:36.034 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+17 Nov 2021 - 14:52:36.034 [main] INFO  io.javalin.Javalin - Javalin started in 371ms \o/
+17 Nov 2021 - 14:52:43.070 [qtp33105141-22] INFO  com.revature.app.Application - PUT request received to the /clients/1 endpoint
+17 Nov 2021 - 14:52:43.249 [qtp33105141-22] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 14:52:43.649 [qtp33105141-22] WARN  io.javalin.Javalin - Uncaught exception
+com.revature.exceptions.InvalidParameterException: The names cannot be blank
+	at com.revature.service.ClientService.editClientById(ClientService.java:191)
+	at com.revature.controller.ClientController.lambda$4(ClientController.java:64)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:113)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:129)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:748)
+17 Nov 2021 - 15:13:06.064 [qtp33105141-13] INFO  com.revature.app.Application - GET request received to the /clients/1 endpoint
+17 Nov 2021 - 15:13:06.064 [qtp33105141-13] INFO  com.revature.service.ClientService - getClientById() invoked
+17 Nov 2021 - 15:13:09.613 [qtp33105141-20] INFO  com.revature.app.Application - GET request received to the /clients/ endpoint
+17 Nov 2021 - 15:13:09.613 [qtp33105141-20] INFO  com.revature.service.ClientService - getAllClients() invoked
+17 Nov 2021 - 15:13:20.604 [qtp33105141-26] INFO  com.revature.app.Application - PUT request received to the /clients/1 endpoint
+17 Nov 2021 - 15:13:20.604 [qtp33105141-26] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 15:13:35.992 [qtp33105141-20] INFO  com.revature.app.Application - PUT request received to the /clients/1 endpoint
+17 Nov 2021 - 15:13:35.992 [qtp33105141-20] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 15:13:41.168 [qtp33105141-26] INFO  com.revature.app.Application - PUT request received to the /clients/1 endpoint
+17 Nov 2021 - 15:13:41.169 [qtp33105141-26] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 15:13:46.952 [qtp33105141-20] INFO  com.revature.app.Application - PUT request received to the /clients/1 endpoint
+17 Nov 2021 - 15:13:46.952 [qtp33105141-20] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 15:13:47.015 [qtp33105141-20] WARN  io.javalin.Javalin - Uncaught exception
+com.revature.exceptions.InvalidParameterException: The names cannot be blank
+	at com.revature.service.ClientService.editClientById(ClientService.java:191)
+	at com.revature.controller.ClientController.lambda$4(ClientController.java:64)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:113)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:129)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:409)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:748)
+17 Nov 2021 - 15:13:52.337 [qtp33105141-26] INFO  com.revature.app.Application - PUT request received to the /clients/1 endpoint
+17 Nov 2021 - 15:13:52.338 [qtp33105141-26] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 15:13:59.627 [qtp33105141-20] INFO  com.revature.app.Application - GET request received to the /clients/2/accounts endpoint
+17 Nov 2021 - 15:13:59.628 [qtp33105141-20] INFO  com.revature.service.AccountService - getAllAccountsByClientId() invoked
+17 Nov 2021 - 15:13:59.694 [qtp33105141-20] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:13:59.694 [qtp33105141-20] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:14:02.621 [qtp33105141-26] INFO  com.revature.app.Application - GET request received to the /clients/1/accounts endpoint
+17 Nov 2021 - 15:14:02.621 [qtp33105141-26] INFO  com.revature.service.AccountService - getAllAccountsByClientId() invoked
+17 Nov 2021 - 15:14:02.687 [qtp33105141-26] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:14:02.687 [qtp33105141-26] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:14:08.422 [qtp33105141-20] INFO  com.revature.app.Application - GET request received to the /clients/1/accounts/1 endpoint
+17 Nov 2021 - 15:14:08.423 [qtp33105141-20] INFO  com.revature.service.AccountService - getAccountIdWithClientId() invoked
+17 Nov 2021 - 15:14:11.262 [qtp33105141-26] INFO  com.revature.app.Application - PUT request received to the /clients/2/accounts/1 endpoint
+17 Nov 2021 - 15:14:11.264 [qtp33105141-26] INFO  com.revature.service.AccountService - editAccountWithClientId() invoked
+17 Nov 2021 - 15:14:11.388 [qtp33105141-26] WARN  io.javalin.Javalin - Uncaught exception
+java.sql.SQLException: Unable to update account record w/ id of 1
+	at com.revature.dao.AccountDAO.updatedAccount(AccountDAO.java:111)
+	at com.revature.service.AccountService.editAccountWithClientId(AccountService.java:126)
+	at com.revature.controller.AccountController.lambda$3(AccountController.java:51)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:113)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:129)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:409)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:748)
+17 Nov 2021 - 15:14:23.653 [qtp33105141-20] INFO  com.revature.app.Application - DELETE request received to the /clients/3/accounts/1 endpoint
+17 Nov 2021 - 15:14:23.653 [qtp33105141-20] INFO  com.revature.service.AccountService - deleteAccountWithClientId() invoked
+17 Nov 2021 - 15:14:27.814 [qtp33105141-26] INFO  com.revature.app.Application - GET request received to the /clients/2/accounts endpoint
+17 Nov 2021 - 15:14:27.815 [qtp33105141-26] INFO  com.revature.service.AccountService - getAllAccountsByClientId() invoked
+17 Nov 2021 - 15:14:27.937 [qtp33105141-26] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:14:27.937 [qtp33105141-26] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:15:54.444 [qtp33105141-9] INFO  com.revature.app.Application - GET request received to the /clients/1 endpoint
+17 Nov 2021 - 15:15:54.444 [qtp33105141-9] INFO  com.revature.service.ClientService - getClientById() invoked
+17 Nov 2021 - 15:15:59.703 [qtp33105141-27] INFO  com.revature.app.Application - GET request received to the /clients/ endpoint
+17 Nov 2021 - 15:15:59.703 [qtp33105141-27] INFO  com.revature.service.ClientService - getAllClients() invoked
+17 Nov 2021 - 15:16:11.406 [qtp33105141-28] INFO  com.revature.app.Application - POST request received to the /clients/ endpoint
+17 Nov 2021 - 15:16:11.407 [qtp33105141-28] INFO  com.revature.service.ClientService - addClient() invoked
+17 Nov 2021 - 15:16:20.089 [qtp33105141-27] INFO  com.revature.app.Application - PATCH request received to the /clients/6/firstname endpoint
+17 Nov 2021 - 15:16:20.089 [qtp33105141-27] INFO  com.revature.service.ClientService - editFirstNameOfClient() invoked
+17 Nov 2021 - 15:16:29.456 [qtp33105141-28] INFO  com.revature.app.Application - PUT request received to the /clients/6 endpoint
+17 Nov 2021 - 15:16:29.457 [qtp33105141-28] INFO  com.revature.service.ClientService - editClientById() invoked
+17 Nov 2021 - 15:16:34.371 [qtp33105141-27] INFO  com.revature.app.Application - DELETE request received to the /clients/6 endpoint
+17 Nov 2021 - 15:16:34.371 [qtp33105141-27] INFO  com.revature.service.ClientService - deleteClientById() invoked
+17 Nov 2021 - 15:16:45.489 [qtp33105141-28] INFO  com.revature.app.Application - POST request received to the /clients/1/accounts endpoint
+17 Nov 2021 - 15:16:45.490 [qtp33105141-28] INFO  com.revature.service.AccountService - addAccountByClientId() invoked
+17 Nov 2021 - 15:16:48.390 [qtp33105141-27] INFO  com.revature.app.Application - PUT request received to the /clients/2/accounts/1 endpoint
+17 Nov 2021 - 15:16:48.390 [qtp33105141-27] INFO  com.revature.service.AccountService - editAccountWithClientId() invoked
+17 Nov 2021 - 15:16:48.524 [qtp33105141-27] WARN  io.javalin.Javalin - Uncaught exception
+java.sql.SQLException: Unable to update account record w/ id of 1
+	at com.revature.dao.AccountDAO.updatedAccount(AccountDAO.java:111)
+	at com.revature.service.AccountService.editAccountWithClientId(AccountService.java:126)
+	at com.revature.controller.AccountController.lambda$3(AccountController.java:51)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:113)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:129)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:409)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:748)
+17 Nov 2021 - 15:16:53.220 [qtp33105141-28] INFO  com.revature.app.Application - PUT request received to the /clients/1/accounts/1 endpoint
+17 Nov 2021 - 15:16:53.221 [qtp33105141-28] INFO  com.revature.service.AccountService - editAccountWithClientId() invoked
+17 Nov 2021 - 15:16:53.345 [qtp33105141-28] WARN  io.javalin.Javalin - Uncaught exception
+java.sql.SQLException: Unable to update account record w/ id of 1
+	at com.revature.dao.AccountDAO.updatedAccount(AccountDAO.java:111)
+	at com.revature.service.AccountService.editAccountWithClientId(AccountService.java:126)
+	at com.revature.controller.AccountController.lambda$3(AccountController.java:51)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:113)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:129)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:409)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Thread.java:748)
+17 Nov 2021 - 15:17:05.448 [qtp33105141-27] INFO  com.revature.app.Application - GET request received to the /clients/1/accounts endpoint
+17 Nov 2021 - 15:17:05.449 [qtp33105141-27] INFO  com.revature.service.AccountService - getAllAccountsByClientId() invoked
+17 Nov 2021 - 15:17:05.518 [qtp33105141-27] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:17:05.518 [qtp33105141-27] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:17:05.518 [qtp33105141-27] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:17:12.423 [qtp33105141-28] INFO  com.revature.app.Application - GET request received to the /clients/1/accounts endpoint
+17 Nov 2021 - 15:17:12.424 [qtp33105141-28] INFO  com.revature.service.AccountService - getAllAccountsByClientId() invoked
+17 Nov 2021 - 15:17:12.490 [qtp33105141-28] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:17:12.490 [qtp33105141-28] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:17:12.490 [qtp33105141-28] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:17:21.821 [qtp33105141-27] INFO  com.revature.app.Application - GET request received to the /clients/1/accounts endpoint
+17 Nov 2021 - 15:17:21.821 [qtp33105141-27] INFO  com.revature.service.AccountService - getAllAccountsByClientId() invoked
+17 Nov 2021 - 15:17:21.886 [qtp33105141-27] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:17:21.886 [qtp33105141-27] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:17:21.886 [qtp33105141-27] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:17:30.262 [qtp33105141-28] INFO  com.revature.app.Application - GET request received to the /clients/1/accounts endpoint
+17 Nov 2021 - 15:17:30.262 [qtp33105141-28] INFO  com.revature.service.AccountService - getAllAccountsByClientId() invoked
+17 Nov 2021 - 15:17:30.322 [qtp33105141-28] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:17:30.322 [qtp33105141-28] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:17:30.322 [qtp33105141-28] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:17:33.548 [qtp33105141-27] INFO  com.revature.app.Application - GET request received to the /clients/1/accounts endpoint
+17 Nov 2021 - 15:17:33.548 [qtp33105141-27] INFO  com.revature.service.AccountService - getAllAccountsByClientId() invoked
+17 Nov 2021 - 15:17:33.615 [qtp33105141-27] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:17:33.615 [qtp33105141-27] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:17:33.615 [qtp33105141-27] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:18:01.635 [qtp33105141-28] INFO  com.revature.app.Application - GET request received to the /clients/1/accounts endpoint
+17 Nov 2021 - 15:18:01.635 [qtp33105141-28] INFO  com.revature.service.AccountService - getAllAccountsByClientId() invoked
+17 Nov 2021 - 15:18:01.697 [qtp33105141-28] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:18:01.697 [qtp33105141-28] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:18:01.697 [qtp33105141-28] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:18:09.477 [qtp33105141-27] INFO  com.revature.app.Application - GET request received to the /clients/1/accounts endpoint
+17 Nov 2021 - 15:18:09.477 [qtp33105141-27] INFO  com.revature.service.AccountService - getAllAccountsByClientId() invoked
+17 Nov 2021 - 15:18:09.538 [qtp33105141-27] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:18:09.538 [qtp33105141-27] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed
+17 Nov 2021 - 15:18:09.538 [qtp33105141-27] INFO  com.revature.dao.AccountDAO - getAllAccountsByClientId was processed

@@ -56,7 +56,7 @@ public class AccountService {
 		} else if (ctx.queryParam("greaterThan") != null) { // only greater than
 			int greaterThan = Integer.parseInt(ctx.queryParam("greaterThan"));
 
-			accounts = this.accountDao.getAllAccountsByClientId(id, greaterThan, 5000);
+			accounts = this.accountDao.getAllAccountsByClientId(id, greaterThan, 1000);
 		} else {
 			accounts = this.accountDao.getAllAccountsByClientId(id, 0, 10000);
 		}
@@ -82,14 +82,14 @@ public class AccountService {
 	}
 
 	public Account addAccountByClientId(AddOrUpdateAccountDTO dto)
-			throws SQLException, InvalidParameterException, AccountNotFoundException {
+			throws SQLException, InvalidParameterException{
 		logger.info("addAccountByClientId() invoked");
 		try {
-			if (dto.getAccountAmount() > 0) {
+			if (dto.getAccountAmount() < 1) {
 				throw new InvalidParameterException("The account's amount must be greater than 0");
 			}
 
-			if (dto.getAccountNumber() > 0) {
+			if (dto.getAccountNumber() < 1) {
 				throw new InvalidParameterException("The account's number must be greater than 0");
 			}
 
@@ -111,7 +111,7 @@ public class AccountService {
 			int clientId) throws SQLException, InvalidParameterException, AccountNotFoundException {
 		logger.info("editAccountWithClientId() invoked");
 		try {
-			// int c_id = Integer.parseInt(clientId);
+			//int c_id = Integer.parseInt(clientId);
 			int a_id = Integer.parseInt(accountId);
 
 			Account accountToEdit = this.accountDao.getAccountByIdByClientId(a_id);

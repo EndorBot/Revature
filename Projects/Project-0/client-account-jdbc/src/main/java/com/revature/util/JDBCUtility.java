@@ -13,7 +13,7 @@ public class JDBCUtility {
 		//Credentials to connect to database
 		String url = "jdbc:postgresql://localhost:5432/postgres";
 		String username = "postgres";
-		String password = "password";
+		String password = "dujPJ4HApt";
 		// jdbc:postgresql://localhost:5432/postgres
 		
 		Driver postgresDriver = new Driver();

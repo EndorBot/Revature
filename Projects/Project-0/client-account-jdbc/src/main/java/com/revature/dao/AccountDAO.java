@@ -118,13 +118,13 @@ public class AccountDAO {
 	public Account addAccountToClientId(AddOrUpdateAccountDTO account) throws SQLException {
 		try (Connection con = JDBCUtility.getConnection()) {
 			String sql = "INSERT INTO accounts (account_number, account_amount, account_type, client_id)"
-					+ " VALUES (?, ?, ?)";
+					+ " VALUES (?, ?, ?, ?)";
 			PreparedStatement pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
 			pstmt.setInt(1, account.getAccountNumber());
 			pstmt.setInt(2, account.getAccountAmount());
 			pstmt.setString(3, account.getAccountType());
-			// pstmt.setInt(4, account.getRefClientId());
+			pstmt.setInt(4, account.getRefClientId());
 
 			int numberOfRecordsInserted = pstmt.executeUpdate();
 
